@@ -1,0 +1,323 @@
+/* Optional preview for the Tabularis Web 0.32 layout and the two Vice City palettes. */
+:root[style*="--accent-primary: #ff82b1" i] {
+    --vice-banner-height: clamp(72px, 11vh, 105px);
+    --vice-panorama: url("./vice-city-sunset.webp");
+}
+
+:root[style*="--accent-primary: #9f205f" i] {
+    --vice-banner-height: clamp(72px, 11vh, 105px);
+    --vice-panorama: url("./vice-city-daybreak.webp");
+}
+
+:root:is([style*="--accent-primary: #ff82b1" i], [style*="--accent-primary: #9f205f" i])
+    main .h-full.flex.flex-col.overflow-hidden.bg-base:has(input[placeholder="Search connections..."]) {
+    background-image:
+        linear-gradient(90deg, var(--bg-base), color-mix(in srgb, var(--bg-base) 83%, transparent) 29%, transparent 72%),
+        linear-gradient(180deg, color-mix(in srgb, var(--bg-base) 35%, transparent), transparent 30%),
+        var(--vice-panorama);
+    background-size: cover;
+    background-position: right center;
+}
+
+:root:is([style*="--accent-primary: #ff82b1" i], [style*="--accent-primary: #9f205f" i])
+    .flex.flex-col.h-full.bg-base:has(> .h-9 :is([data-tab-id], button[title="New Console"]))::before {
+    content: "";
+    flex: 0 0 var(--vice-banner-height);
+    border-bottom: 1px solid var(--border-default);
+    background-image:
+        url("./retro-car.svg"),
+        linear-gradient(90deg, var(--bg-base) 24%, transparent 83%),
+        var(--vice-panorama);
+    background-size: 54px auto, cover, clamp(420px, 72vw, 970px) auto;
+    background-position: 56% calc(100% - 5px), center, right 63%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root:is([style*="--accent-primary: #ff82b1" i], [style*="--accent-primary: #9f205f" i])
+        .flex.flex-col.h-full.bg-base:has(> .h-9 :is([data-tab-id], button[title="New Console"]))::before {
+        animation: vice-coastal-drive 15s linear infinite;
+    }
+}
+
+@keyframes vice-coastal-drive {
+    from { background-position: -54px calc(100% - 5px), center, right 63%; }
+    to { background-position: calc(100% + 54px) calc(100% - 5px), center, right 63%; }
+}
+
+:root:is([style*="--accent-primary: #ff82b1" i], [style*="--accent-primary: #9f205f" i])
+    .vice-drive-workspace {
+    position: relative;
+}
+
+.vice-drive-toggle {
+    display: none;
+}
+
+:root:is([style*="--accent-primary: #ff82b1" i], [style*="--accent-primary: #9f205f" i])
+    .vice-drive-toggle {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: block;
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    padding: 5px 9px;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.vice-drive-toggle:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+}
+
+:root:is([style*="--accent-primary: #ff82b1" i], [style*="--accent-primary: #9f205f" i])
+    .flex.flex-col.h-full.bg-base.vice-drive-active:has(> .h-9 :is([data-tab-id], button[title="New Console"]))::before {
+    animation: none;
+    background-position: var(--vice-car-x, 50%) calc(100% - 5px - var(--vice-car-y, 0px)), center, right 63%;
+}
+
+.vice-drive-game {
+    position: absolute;
+    inset: 0 0 auto;
+    height: var(--vice-banner-height);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.vice-drive-score {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 5px 9px;
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border-radius: 6px;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.vice-drive-stars {
+    letter-spacing: 0.08em;
+    color: var(--accent-warning);
+}
+
+.vice-drive-patrol,
+.vice-drive-hazard {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+}
+
+.vice-drive-patrol {
+    width: 54px;
+    aspect-ratio: 64 / 26;
+    background: url("./patrol.svg") center / contain no-repeat;
+    filter: drop-shadow(0 -2px 4px #6c9dff) drop-shadow(-4px -2px 4px #ff5787);
+}
+
+.vice-drive-danger .vice-drive-score {
+    outline: 1px solid var(--accent-error);
+}
+
+.vice-drive-hazard[data-kind="cone"] {
+    clip-path: polygon(43% 0, 57% 0, 87% 84%, 100% 84%, 100% 100%, 0 100%, 0 84%, 13% 84%);
+    background: linear-gradient(#ff8059 35%, #fff1c8 35% 53%, #ff8059 53%);
+}
+
+.vice-drive-hazard[data-kind="barrels"] {
+    clip-path: polygon(8% 0, 43% 0, 51% 23%, 59% 0, 92% 0, 100% 100%, 0 100%);
+    background:
+        linear-gradient(90deg, transparent 45%, #301b39 45% 55%, transparent 55%),
+        linear-gradient(#ad5c85 12%, #663c65 12% 21%, #f1879e 21% 63%, #663c65 63% 73%, #ad5c85 73%);
+}
+
+.vice-drive-hazard[data-kind="barricade"] {
+    clip-path: polygon(0 8%, 100% 8%, 100% 68%, 88% 68%, 88% 100%, 78% 100%, 78% 68%, 22% 68%, 22% 100%, 12% 100%, 12% 68%, 0 68%);
+    background: repeating-linear-gradient(118deg, #ffcd7b 0 8px, #4b2b52 8px 15px);
+}
+
+.vice-drive-hazard[data-kind="spike-strip"] {
+    background:
+        linear-gradient(#ffc1d6, #694165) bottom / 100% 3px no-repeat,
+        conic-gradient(from 150deg at 50% 4%, #ffc1d6 0deg 60deg, transparent 61deg) 0 0 / 12px 100%;
+}
+
+.vice-drive-result {
+    display: none;
+}
+
+.vice-drive-finished .vice-drive-result {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    padding-top: 5px;
+    background: linear-gradient(90deg, #170e24e6, #291324f2 50%, #170e24bf);
+}
+
+.vice-drive-result strong {
+    color: #ffc0cd;
+    font-family: var(--font-mono, monospace);
+    font-size: clamp(26px, 4.4vh, 42px);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: 0.16em;
+    text-shadow: 0 0 20px #ff548577;
+}
+
+.vice-drive-finished .vice-drive-score {
+    z-index: 1;
+}
+
+:root:is([style*="--accent-primary: #ff82b1" i], [style*="--accent-primary: #9f205f" i])
+    .vice-drive-finished .vice-drive-toggle {
+    top: calc(var(--vice-banner-height) * 0.58);
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    padding-inline: 16px;
+    border-color: var(--accent-primary);
+    background: var(--accent-primary);
+    color: var(--text-inverse);
+    font-weight: 700;
+}
+
+.vice-drive-finished .vice-drive-toggle:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .vice-drive-finished .vice-drive-result strong {
+        animation: vice-wasted-reveal 460ms ease-out both;
+    }
+}
+
+@keyframes vice-wasted-reveal {
+    from { transform: scale(1.22); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.vice-drive-supply,
+.vice-drive-shot {
+    position: absolute;
+    left: 0;
+}
+
+.vice-drive-supply {
+    bottom: 7px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: #21162e;
+    color: #ffcf91;
+    font: bold 15px / 20px system-ui, sans-serif;
+    text-align: center;
+    box-shadow: 0 0 8px currentColor;
+}
+
+.vice-drive-supply[data-kind="shield"] {
+    color: #7ef2d4;
+}
+
+.vice-drive-supply[data-kind="pulse"] {
+    color: #dbaaff;
+}
+
+.vice-drive-shot {
+    bottom: 13px;
+    width: 12px;
+    height: 4px;
+    border-radius: 4px;
+    background: currentColor;
+    box-shadow: 0 0 7px currentColor;
+}
+
+.vice-drive-shot-police {
+    color: #ffc380;
+}
+
+.vice-drive-shot-player {
+    color: #93fff1;
+}
+
+@media (max-width: 680px) {
+    .vice-drive-score {
+        top: 8px;
+        right: 6px;
+        font-size: 10px;
+    }
+
+    .vice-drive-toggle {
+        top: 8px;
+        left: 6px;
+        font-size: 10px;
+    }
+}
+
+.vice-drive-reinforcement {
+    filter: drop-shadow(0 -2px 3px #90d8ff);
+}
+
+.vice-drive-helicopter {
+    position: absolute;
+    top: 4px;
+    left: 55%;
+    width: 67px;
+    aspect-ratio: 78 / 29;
+    background: url("./helicopter.svg") center / contain no-repeat;
+    filter: drop-shadow(0 1px 6px #bfd6ff89);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .vice-drive-helicopter {
+        animation: vice-air-patrol 3.2s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes vice-air-patrol {
+    from { transform: translate(-28px, 0); }
+    to { transform: translate(28px, 4px); }
+}
+
+.vice-drive-hazard[data-kind="air-crate"] {
+    border: 2px solid #ffd393;
+    border-radius: 3px;
+    background:
+        linear-gradient(35deg, transparent 42%, #ffd393 42% 50%, transparent 50%),
+        linear-gradient(-35deg, transparent 42%, #ffd393 42% 50%, transparent 50%),
+        #665176;
+}
+
+.vice-drive-hazard[data-kind="armor"] {
+    clip-path: polygon(0 62%, 9% 45%, 24% 45%, 29% 10%, 53% 10%, 65% 30%, 97% 30%, 97% 47%, 74% 47%, 90% 57%, 100% 73%, 94% 98%, 6% 98%);
+    background:
+        radial-gradient(circle at 26% 84%, #d9c69e 0 3px, transparent 4px),
+        radial-gradient(circle at 50% 84%, #d9c69e 0 3px, transparent 4px),
+        radial-gradient(circle at 74% 84%, #d9c69e 0 3px, transparent 4px),
+        linear-gradient(#97a88b 57%, #697261 57% 77%, #3d3c43 77%);
+}
+
+.vice-drive-heat {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: 3px;
+    accent-color: var(--accent-warning);
+}
+
+.vice-drive-heat[hidden] {
+    display: none;
+}
+
+.vice-drive-patrol.vice-drive-aiming {
+    filter: drop-shadow(2px 0 5px #ffc886) drop-shadow(0 -2px 4px #6c9dff);
+}

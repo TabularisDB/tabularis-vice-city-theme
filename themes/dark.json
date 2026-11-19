@@ -1,0 +1,213 @@
+{
+  "$schema": "https://raw.githubusercontent.com/TabularisDB/tabularis/main/packages/web-ui/src/schemas/theme-definition-v1.json",
+  "schemaVersion": 1,
+  "mode": "dark",
+  "colors": {
+    "bg": {
+      "base": "#191326",
+      "elevated": "#22192F",
+      "overlay": "#2B1E39",
+      "input": "#170F24",
+      "tooltip": "#332340"
+    },
+    "surface": {
+      "primary": "#241A33",
+      "secondary": "#2D203C",
+      "tertiary": "#3C2A4B",
+      "hover": "#3E294A",
+      "active": "#4F2C4F",
+      "disabled": "#30293C"
+    },
+    "text": {
+      "primary": "#FFF2E9",
+      "secondary": "#E6CDDE",
+      "muted": "#C2A5C1",
+      "disabled": "#91738D",
+      "accent": "#FF97BC",
+      "inverse": "#281125"
+    },
+    "accent": {
+      "primary": "#FF82B1",
+      "secondary": "#CCA6FF",
+      "success": "#71E1CB",
+      "warning": "#FFC47F",
+      "error": "#FF8E91",
+      "info": "#9DC8FF"
+    },
+    "border": {
+      "subtle": "#3B2A4B",
+      "default": "#533B60",
+      "strong": "#785378",
+      "focus": "#FF9EC4"
+    },
+    "semantic": {
+      "string": "#85E6D0",
+      "number": "#FFC18A",
+      "boolean": "#D7B6FF",
+      "date": "#9DC8FF",
+      "null": "#C2A5C1",
+      "primaryKey": "#FFD294",
+      "foreignKey": "#8AE6D4",
+      "index": "#D4AEFF",
+      "modified": "#FFBB81",
+      "deleted": "#FF8E91",
+      "new": "#71E1CB"
+    }
+  },
+  "attribution": "Original Tabularis palette inspired by Vice City and the Tabularis launch clips.",
+  "typography": {
+    "fontFamily": {
+      "base": [
+        "Inter",
+        "system-ui",
+        "sans-serif"
+      ],
+      "mono": [
+        "JetBrains Mono",
+        "DejaVu Sans Mono",
+        "monospace"
+      ]
+    }
+  },
+  "layout": {
+    "borderRadius": {
+      "sm": 3,
+      "base": 6,
+      "lg": 9,
+      "xl": 13
+    }
+  },
+  "editor": {
+    "colors": {
+      "foreground": "#FFF2E9",
+      "descriptionForeground": "#E6CDDE",
+      "focusBorder": "#FF9EC4",
+      "errorForeground": "#FF8E91",
+      "editor.background": "#191326",
+      "editor.foreground": "#FFF2E9",
+      "editorGutter.background": "#191326",
+      "editorCursor.foreground": "#FF82B1",
+      "editorLineNumber.foreground": "#C2A5C1",
+      "editorLineNumber.activeForeground": "#FF97BC",
+      "editor.lineHighlightBackground": "#241A33",
+      "editor.lineHighlightBorder": "#00000000",
+      "editor.selectionBackground": "#4F2C4F",
+      "editor.inactiveSelectionBackground": "#3C2A4B",
+      "editor.selectionHighlightBackground": "#CCA6FF28",
+      "editor.wordHighlightBackground": "#9DC8FF26",
+      "editor.findMatchBackground": "#FFC47F42",
+      "editor.findMatchHighlightBackground": "#FFC47F28",
+      "editorWhitespace.foreground": "#785378",
+      "editorIndentGuide.background1": "#533B60",
+      "editorIndentGuide.activeBackground1": "#785378",
+      "editorBracketMatch.background": "#CCA6FF24",
+      "editorBracketMatch.border": "#CCA6FF",
+      "editorError.foreground": "#FF8E91",
+      "editorWarning.foreground": "#FFC47F",
+      "editorInfo.foreground": "#9DC8FF",
+      "editorWidget.background": "#2B1E39",
+      "editorWidget.border": "#533B60",
+      "editorHoverWidget.background": "#332340",
+      "editorHoverWidget.border": "#785378",
+      "editorSuggestWidget.background": "#2B1E39",
+      "editorSuggestWidget.border": "#533B60",
+      "editorSuggestWidget.foreground": "#FFF2E9",
+      "editorSuggestWidget.selectedBackground": "#4F2C4F",
+      "editorSuggestWidget.highlightForeground": "#FF97BC",
+      "editorOverviewRuler.border": "#3B2A4B",
+      "diffEditor.insertedTextBackground": "#71E1CB30",
+      "diffEditor.removedTextBackground": "#FF8E9130",
+      "scrollbarSlider.background": "#78537865",
+      "scrollbarSlider.hoverBackground": "#785378A0",
+      "scrollbarSlider.activeBackground": "#FF82B180"
+    },
+    "rules": [
+      {
+        "token": "comment",
+        "foreground": "#C2A5C1",
+        "fontStyle": "italic"
+      },
+      {
+        "token": "comment.sql",
+        "foreground": "#C2A5C1",
+        "fontStyle": "italic"
+      },
+      {
+        "token": "keyword",
+        "foreground": "#FF97BC",
+        "fontStyle": "bold"
+      },
+      {
+        "token": "keyword.sql",
+        "foreground": "#FF97BC",
+        "fontStyle": "bold"
+      },
+      {
+        "token": "string",
+        "foreground": "#85E6D0"
+      },
+      {
+        "token": "string.sql",
+        "foreground": "#85E6D0"
+      },
+      {
+        "token": "number",
+        "foreground": "#FFC18A"
+      },
+      {
+        "token": "number.sql",
+        "foreground": "#FFC18A"
+      },
+      {
+        "token": "operator",
+        "foreground": "#9DC8FF"
+      },
+      {
+        "token": "operator.sql",
+        "foreground": "#9DC8FF"
+      },
+      {
+        "token": "delimiter",
+        "foreground": "#E6CDDE"
+      },
+      {
+        "token": "delimiter.sql",
+        "foreground": "#E6CDDE"
+      },
+      {
+        "token": "identifier",
+        "foreground": "#FFF2E9"
+      },
+      {
+        "token": "identifier.sql",
+        "foreground": "#FFF2E9"
+      },
+      {
+        "token": "identifier.quote",
+        "foreground": "#9DC8FF"
+      },
+      {
+        "token": "identifier.quote.sql",
+        "foreground": "#9DC8FF"
+      },
+      {
+        "token": "predefined",
+        "foreground": "#CCA6FF"
+      },
+      {
+        "token": "predefined.sql",
+        "foreground": "#CCA6FF"
+      },
+      {
+        "token": "invalid",
+        "foreground": "#FF8E91",
+        "fontStyle": "underline"
+      },
+      {
+        "token": "invalid.sql",
+        "foreground": "#FF8E91",
+        "fontStyle": "underline"
+      }
+    ]
+  }
+}

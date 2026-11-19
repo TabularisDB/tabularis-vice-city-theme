@@ -1,0 +1,51 @@
+{
+  "$schema": "https://registry.tabularis.dev/manifest.schema.json?kind=theme",
+  "id": "vice-city-theme",
+  "name": "Vice City for Tabularis",
+  "version": "1.0.0",
+  "kind": "theme",
+  "min_runtime_version": "0.26.0",
+  "theme_schema_version": 1,
+  "theme_variants": [
+    {
+      "id": "dark",
+      "name": "Vice City After Dark",
+      "file": "themes/dark.json"
+    },
+    {
+      "id": "light",
+      "name": "Vice City Daybreak",
+      "file": "themes/light.json"
+    }
+  ],
+  "description": "Vice City sunset and neon in Tabularis. Two complete palettes for the interface, SQL editor, and result grid.",
+  "license": "MIT",
+  "tags": [
+    "theme",
+    "neon",
+    "light",
+    "dark"
+  ],
+  "readme": "README.md",
+  "homepage": "https://github.com/TabularisDB/tabularis-vice-city-theme",
+  "support": {
+    "issues_url": "https://github.com/TabularisDB/tabularis-vice-city-theme/issues"
+  },
+  "screenshots": [
+    {
+      "url": "https://raw.githubusercontent.com/TabularisDB/tabularis-vice-city-theme/v1.0.0/screenshots/vice-city-after-dark.png",
+      "alt": "After Dark palette in the Tabularis SQL editor and result grid",
+      "caption": "Vice City After Dark"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TabularisDB/tabularis-vice-city-theme/v1.0.0/screenshots/vice-city-daybreak.png",
+      "alt": "Daybreak palette in the Tabularis SQL editor and result grid",
+      "caption": "Vice City Daybreak"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TabularisDB/tabularis-vice-city-theme/v1.0.0/screenshots/vice-city-appearance.png",
+      "alt": "Both Vice City variants in Tabularis appearance settings",
+      "caption": "Theme selection"
+    }
+  ]
+}
