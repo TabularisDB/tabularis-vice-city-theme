@@ -47,5 +47,6 @@
       "alt": "Both Vice City variants in Tabularis appearance settings",
       "caption": "Theme selection"
     }
-  ]
+  ],
+  "icon": "assets/vice-city-icon.png"
 }
